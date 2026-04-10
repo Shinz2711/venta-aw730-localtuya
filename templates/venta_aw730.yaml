@@ -1,0 +1,201 @@
+# Template: Venta AW730 AeroStyle Compact
+# Integration: xZetsubou/hass-localtuya, Version 2025.11.0
+# Tested Protocol: 3.4
+# App: Smart Life (Tuya)
+# Configuration notes:
+# - DPs may vary slightly with firmware
+# - If "Configure Entity" dialogue shows the error "expected int" just retype the values
+#   manually and it will work
+# Usage Notes:
+# - Smart Life app should be closed during LocalTuya use
+# - (de)activating of Hybrid mode won't show on device display, but works
+# - Reset buttons don't work. Will retest once counters are zero. Might be removed in the future
+
+- humidifier:
+    entity_category: None
+    humidifier_set_humidity_dp: '13'
+    humidifier_current_humidity_dp: '14'
+    humidifier_mode_dp: '24'
+    min_humidity: 30
+    max_humidity: 70
+    humidifier_available_modes:
+      normal: Manual
+      automatic: Auto
+      sleep: Sleep
+    device_class: humidifier
+    friendly_name: ''
+    id: '1'
+    platform: humidifier
+    icon: ''
+- sensor:
+    friendly_name: Temperature
+    entity_category: None
+    unit_of_measurement: °C
+    device_class: temperature
+    state_class: measurement
+    id: '10'
+    platform: sensor
+    icon: ''
+- sensor:
+    friendly_name: Humidity
+    entity_category: None
+    unit_of_measurement: '%'
+    device_class: humidity
+    state_class: measurement
+    id: '14'
+    platform: sensor
+    icon: ''
+- button:
+    friendly_name: Filter Reset
+    entity_category: diagnostic
+    id: '28'
+    platform: button
+    icon: ''
+- button:
+    friendly_name: Cleaning Reset
+    entity_category: diagnostic
+    id: '104'
+    platform: button
+    icon: ''
+- button:
+    friendly_name: Service Reset
+    entity_category: diagnostic
+    id: '108'
+    platform: button
+    icon: ''
+- select:
+    friendly_name: LED Color
+    entity_category: None
+    select_options:
+      color1: purple
+      color2: blue
+      color3: green
+      color4: light green
+      color5: lemon
+      color6: yellow
+      color7: orange
+      aqi_visualization: AQI
+    restore_on_reconnect: false
+    is_passive_entity: false
+    id: '113'
+    platform: select
+    icon: ''
+- sensor:
+    friendly_name: PM2.5
+    entity_category: None
+    unit_of_measurement: ug/m3
+    device_class: pm25
+    state_class: measurement
+    id: '32'
+    platform: sensor
+    icon: ''
+- sensor:
+    friendly_name: Filter
+    entity_category: diagnostic
+    unit_of_measurement: days
+    device_class: duration
+    state_class: measurement
+    id: '101'
+    platform: sensor
+    icon: ''
+- sensor:
+    friendly_name: Water Level
+    entity_category: diagnostic
+    unit_of_measurement: '%'
+    device_class: duration
+    state_class: measurement
+    id: '102'
+    platform: sensor
+    icon: ''
+- select:
+    friendly_name: Fan Speed
+    entity_category: None
+    select_options:
+      speed1: 1
+      speed2: 2
+      speed3: 3
+      speed4: 4
+      speed5: 5
+    restore_on_reconnect: false
+    is_passive_entity: false
+    id: '105'
+    platform: select
+    icon: ''
+- select:
+    friendly_name: LEd Brightness
+    entity_category: None
+    select_options:
+      bright1: 1
+      bright2: 2
+      bright3: 3
+      bright4: 4
+      bright5: 5
+      bright6: 6
+      bright7: 7
+      bright8: 8
+    restore_on_reconnect: false
+    is_passive_entity: false
+    id: '106'
+    platform: select
+    icon: ''
+- sensor:
+    friendly_name: Cleaning
+    entity_category: diagnostic
+    unit_of_measurement: days
+    device_class: duration
+    state_class: measurement
+    id: '109'
+    platform: sensor
+    icon: ''
+- sensor:
+    friendly_name: Service
+    entity_category: diagnostic
+    unit_of_measurement: days
+    device_class: duration
+    state_class: measurement
+    id: '111'
+    platform: sensor
+    icon: ''
+- switch:
+    friendly_name: Hybrid Mode
+    entity_category: config
+    current: '112'
+    restore_on_reconnect: false
+    is_passive_entity: false
+    id: '112'
+    platform: switch
+    icon: ''
+- switch:
+    friendly_name: LED on
+    entity_category: None
+    restore_on_reconnect: false
+    is_passive_entity: false
+    id: '114'
+    platform: switch
+    icon: ''
+- number:
+    friendly_name: RH Offset
+    entity_category: config
+    min_value: -10.0
+    max_value: 10.0
+    step_size: 1.0
+    restore_on_reconnect: false
+    is_passive_entity: false
+    device_class: humidity
+    unit_of_measurement: '%'
+    id: '116'
+    platform: number
+    icon: ''
+- number:
+    friendly_name: Humidity Set
+    entity_category: config
+    min_value: 30.0
+    max_value: 70.0
+    step_size: 1.0
+    restore_on_reconnect: false
+    is_passive_entity: false
+    device_class: humidity
+    unit_of_measurement: '%'
+    id: '13'
+    platform: number
+    icon: ''
