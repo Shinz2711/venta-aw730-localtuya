@@ -3,6 +3,9 @@
 LocalTuya device template for the **Venta AW730 AeroStyle Compact**  
 for use with **xZetsubou/hass-localtuya** in Home Assistant.
 
+![Screenshot 1](https://github.com/user-attachments/assets/6f00d363-9b74-4dd4-9f66-e7836a82f7c6)
+![Screenshot 2](https://github.com/user-attachments/assets/1cd4f6fc-5314-4fae-a177-312e695e3209)
+
 ---
 
 ## ✅ Tested Environment
